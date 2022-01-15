@@ -2,6 +2,14 @@
 
 This app is to test and demonstrate the event-driven application using Redis.
 
+`fish-service` (handles operations on fish, produces event once fish is lured)
+
+`challenge-service` (subscribes to 'lured fish' event and adds up some score points to a challenge score)
+
+Services are runnable as a jar with embedded container, 
+or for more convenience as Dockerized images can be deployed to Kubernetes cluster/node.
+Project contains a Redis cluster deployable to Kubernetes.
+
 ### Runbook
 As a prerequisite you will need:
 1) Java RE
