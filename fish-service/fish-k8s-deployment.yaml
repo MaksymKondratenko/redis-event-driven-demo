@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fish
+  labels:
+    app: fish
+spec:
+  selector:
+    matchLabels:
+      app: fish
+  template:
+    metadata:
+      labels:
+        app: fish
+    spec:
+      containers:
+        - name: fish
+          image: fish-app:0.6
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fish-service
+spec:
+  type: NodePort
+  selector:
+    app: fish
+  ports:
+    - protocol: TCP
+      port: 8080
