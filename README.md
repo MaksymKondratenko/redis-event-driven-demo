@@ -29,11 +29,44 @@ Minikube or one provided by Docker Desktop is enough.
 
 `kubectl cluster-info`
 
-5) in `application.yaml` replace the hostname and port values.
+5) in `application.yaml`s replace the hostname and port number with respective values.
 6) in case you want to run the app against your Cloud Redis instance and you need to authenticate,
 feel free to set the client password as well.
 
 #### Run Fish service
+1) `cd` to root project directory (Dockerfile is there)
+2) Build the docker image of the app
+
+`docker build -t fish-app:0.1 fish-service/`
+3) install the app on K8s
+
+`kubectl apply -f fish-service/fish-k8s-deployment.yaml`
+4) check the `NodePort` exposed:
+
+`kubectl get service fish-service -o jsonpath={.spec.ports[0].nodePort}`
+5) check the kube DNS alias
+
+`kubectl cluster-info`
+
+6) try it out
+
+Create a fish:
+```
+curl --location --request POST 'http://<kube_DNS_alias>:<node_port>/fish' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "id": "first",
+    "kind": "old one",
+    "length": 0.130,
+    "weight": 0.4
+}'
+```
+Read all fish:
+```
+curl --location --request GET 'http://<kube_DNS_alias>:<node_port>/fish'
+```
+
+#### Run Challenge service
 1) `cd` to root project directory (Dockerfile is there)
 2) Build the docker image of the app
 
@@ -50,18 +83,8 @@ feel free to set the client password as well.
 
 6) try it out
 
-Create a challenge:
 ```
-curl --location --request POST 'http://<kube_DNS_alias>:<node_port>/challenge' \
---header 'Content-Type: application/json' \
---data-raw '{
-   "id": "first",
-    "kind": "old one",
-    "length": 0.130,
-    "weight": 0.4
-}'
-```
-Read a challenge:
+Read all challenge:
 ```
 curl --location --request GET 'http://<kube_DNS_alias>:<node_port>/challenge'
 ```
