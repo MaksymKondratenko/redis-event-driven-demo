@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: challenge
+  labels:
+    app: challenge
+spec:
+  selector:
+    matchLabels:
+      app: challenge
+  template:
+    metadata:
+      labels:
+        app: challenge
+    spec:
+      containers:
+        - name: challenge
+          image: challenge-app:0.1
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: challenge-service
+spec:
+  type: NodePort
+  selector:
+    app: challenge
+  ports:
+    - protocol: TCP
+      port: 8080

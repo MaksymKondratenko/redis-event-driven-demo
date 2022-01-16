@@ -1,0 +1,6 @@
+redis:
+  server:
+    hostname: kubernetes.docker.internal
+    port: 32265
+  pubSub:
+    topic: fish-lured
