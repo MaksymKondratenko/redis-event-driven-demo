@@ -1,4 +1,4 @@
-package org.mk.rediseventdrivendemo.domain.challenge.adapters;
+package org.mk.rediseventdrivendemo.application.adapters;
 
 import lombok.extern.slf4j.Slf4j;
 import org.mk.rediseventdrivendemo.domain.challenge.Challenge;

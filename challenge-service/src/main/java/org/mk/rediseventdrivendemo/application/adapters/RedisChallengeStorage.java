@@ -1,4 +1,4 @@
-package org.mk.rediseventdrivendemo.domain.challenge.adapters;
+package org.mk.rediseventdrivendemo.application.adapters;
 
 import org.mk.rediseventdrivendemo.domain.challenge.Challenge;
 import org.springframework.data.repository.CrudRepository;

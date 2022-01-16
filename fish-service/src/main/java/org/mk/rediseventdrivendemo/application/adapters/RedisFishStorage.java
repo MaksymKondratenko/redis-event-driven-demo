@@ -1,4 +1,4 @@
-package org.mk.rediseventdrivendemo.domain.fish.adapters;
+package org.mk.rediseventdrivendemo.application.adapters;
 
 import org.mk.rediseventdrivendemo.domain.fish.Fish;
 import org.springframework.data.repository.CrudRepository;

@@ -2,7 +2,7 @@ package org.mk.rediseventdrivendemo.application;
 
 import lombok.RequiredArgsConstructor;
 import org.mk.rediseventdrivendemo.domain.challenge.CommitToChallengeUseCase;
-import org.mk.rediseventdrivendemo.domain.challenge.adapters.RedisSink;
+import org.mk.rediseventdrivendemo.application.adapters.RedisSink;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

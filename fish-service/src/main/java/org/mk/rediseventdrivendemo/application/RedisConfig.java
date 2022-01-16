@@ -1,7 +1,7 @@
 package org.mk.rediseventdrivendemo.application;
 
 import org.mk.rediseventdrivendemo.application.ports.Agent;
-import org.mk.rediseventdrivendemo.domain.fish.adapters.FishLuredAgent;
+import org.mk.rediseventdrivendemo.application.adapters.FishLuredAgent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
