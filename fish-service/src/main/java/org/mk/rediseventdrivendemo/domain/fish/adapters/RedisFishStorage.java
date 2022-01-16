@@ -7,4 +7,3 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RedisFishStorage extends CrudRepository<Fish, String> {
 }
-//JPn7%jj9

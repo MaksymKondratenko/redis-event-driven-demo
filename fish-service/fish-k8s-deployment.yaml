@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: fish
-          image: fish-app:0.6
+          image: fish-app:0.1
           ports:
             - containerPort: 8080
               protocol: TCP
