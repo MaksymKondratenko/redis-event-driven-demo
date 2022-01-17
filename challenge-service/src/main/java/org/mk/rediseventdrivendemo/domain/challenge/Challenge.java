@@ -19,6 +19,8 @@ public class Challenge implements Serializable {
         return currentPoints == targetPoints;
     }
 
+    /** Logic is mocked since it is irrelevant for demo.
+     * */
     public boolean doesQualify(String event) {
         return true;
     }
