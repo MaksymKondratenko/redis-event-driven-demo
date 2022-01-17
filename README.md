@@ -2,6 +2,10 @@
 
 This app is to test and demonstrate the event-driven application using Redis.
 
+**Disclaimer:** the app is a scratch and was done quickly just to demonstrate to some CRUD operations on Redis 
+as well as is Pub/Sub mechanism.
+Since its goal is to demonstrate technologies, it does not contain any *business logic*, which in its place is mocked.
+
 `fish-service` (handles operations on fish, produces event once fish is lured)
 
 `challenge-service` (subscribes to 'lured fish' event and adds up some score points to a challenge score)
@@ -83,8 +87,7 @@ curl --location --request GET 'http://<kube_DNS_alias>:<node_port>/fish'
 
 6) try it out
 
-```
-Read all challenge:
+Read all challenges:
 ```
 curl --location --request GET 'http://<kube_DNS_alias>:<node_port>/challenge'
 ```
